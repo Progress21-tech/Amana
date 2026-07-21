@@ -14,19 +14,22 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const res = await auth.login(phone, password) as any;
-      setToken(res.token);
-      setUser(res.user);
-      toast.success('Welcome back!');
-      router.push('/dashboard');
-    } catch (err) {
-      toast.error('Invalid phone or password');
-      setLoading(false);
-    }
-  };
+  e.preventDefault();
+  setLoading(true);
+  console.log('Attempting login with:', { phone, password });
+  try {
+    const res = await auth.login(phone, password) as any;
+    console.log('Login response:', res);
+    setToken(res.token);
+    setUser(res.user);
+    toast.success('Welcome back!');
+    router.push('/dashboard');
+  } catch (err) {
+    console.error('Login failed:', err);
+    toast.error('Invalid phone or password');
+    setLoading(false);
+  }
+};
 
   return (
     <div className="min-h-screen flex">
