@@ -5,7 +5,7 @@
 
 Built for the **APIConf Lagos 2026 Hackathon** · Powered by the **Monnify API**
 
-**Live demo:** _Deploy to Render/Railway_ · **Demo video:** _Record against §2 happy path_ · **Repo:** `https://github.com/[your-handle]/amana`
+**Live demo:** https://amana1.vercel.app/login  **Demo video:** _Record against §2 happy path_ · **Repo:** `https://github.com/Progress21-tech/amana`
 
 ---
 
@@ -107,7 +107,7 @@ Land **one** cooperative and prove the loop end-to-end, then expand through coop
 > **Webhook testing:** ngrok → `https://<tunnel>.ngrok.io/api/webhooks/monnify`
 
 ### Monnify integration (what we use and why)
-> 🔧 **FILL:** mark each row honestly — ✅ Working · 🟡 Partial · ⚪ Planned. Judges are told features needn't all work; honesty reads better than overclaiming.
+> 🔧 **KEY:** — ✅ Working · 🟡 Partial · ⚪ Planned.
 
 | Monnify API | Role in our workflow | Status |
 |---|---|---|
@@ -152,7 +152,7 @@ An assistant that (a) **explains each lending decision in plain language / local
 ## 11. How to Test It (for judges)
 
 > - **Demo video (2–5 min):** _Record against the happy path in §2 and upload_
-> - **Live demo URL:** _Deploy to Render/Vercel and fill in_
+> - **Live demo URL:** https://amana1.vercel.app/login
 > - **Test credentials:**
 >   - Admin: `08000000001` / `admin123`
 >   - Member: `08000000002` / `member123` (Fatima Bello — Band B)
@@ -212,7 +212,8 @@ amana/
 Post-hackathon: harden the scoring model as real repayment data accumulates, expand across a cooperative network, and open the credit-identity layer to partner lenders — turning verified cooperative behaviour into formal credit access.
 
 ## 14. Team
-> 🔧 **FILL:** names, roles, links.
+> **Progress Oni:** Team Lead and Full Stack Developer
+> **Yasir Oyebo:** Software Engineer
 
 ---
 
