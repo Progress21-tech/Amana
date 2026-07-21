@@ -32,4 +32,4 @@ services:
       - key: GEMINI_API_KEY
         sync: false
       - key: API_BASE_URL
-        sync: false
+        value: https://amana-m8kf.onrender.com

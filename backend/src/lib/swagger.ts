@@ -18,12 +18,10 @@ const options: swaggerJSDoc.Options = {
     },
     servers: [
       {
-        url: process.env.API_BASE_URL || 'http://localhost:3001',
-        description: process.env.NODE_ENV === 'production' ? 'Production (Render)' : 'Local development',
-      },
-      {
-        url: 'https://amana-api.onrender.com',
-        description: 'Production (Render)',
+        // Use an explicit API base URL when provided, otherwise use relative root paths
+        // so Swagger UI works correctly behind proxies and on hosted platforms.
+        url: process.env.API_BASE_URL || '/',
+        description: process.env.NODE_ENV === 'production' ? 'Production' : 'Local development',
       },
     ],
     components: {
