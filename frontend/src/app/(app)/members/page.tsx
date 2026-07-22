@@ -15,7 +15,7 @@ export default function MembersPage() {
 
   useEffect(() => {
     members.list().then(res => {
-      setData(res);
+      setData(Array.isArray(res) ? res : []);
       setLoading(false);
     }).catch(err => {
       // Mocking data on error since endpoint might not exist
@@ -31,16 +31,16 @@ export default function MembersPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Members</h1>
-        <Link href="/members/new" className="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg font-medium flex items-center transition-colors">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Members</h1>
+        <Link href="/members/new" className="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg font-medium flex items-center justify-center transition-colors">
           <Plus className="w-4 h-4 mr-2" /> Onboard Member
         </Link>
       </div>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="p-4 border-b border-gray-100 flex items-center bg-gray-50/50">
-          <div className="relative w-72">
+          <div className="relative w-full sm:w-72">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input 
               type="text" 

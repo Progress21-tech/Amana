@@ -84,8 +84,8 @@ export const auth = {
 
 export const members = {
   list: async () => {
-    const res = await api.get<Member[]>('/members');
-    return res.data;
+    const res = await api.get<{ data: Member[] }>('/members');
+    return res.data.data;
   },
   get: async (id: string) => {
     const res = await api.get<Member>(`/members/${id}`);
