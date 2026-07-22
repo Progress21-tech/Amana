@@ -1,11 +1,15 @@
-import { redirect } from 'next/navigation';
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { getToken } from '@/lib/auth';
 
 export default function Home() {
-  const token = getToken();
-  if (token) {
-    redirect('/dashboard');
-  } else {
-    redirect('/login');
-  }
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace(getToken() ? '/dashboard' : '/login');
+  }, [router]);
+
+  return null;
 }
