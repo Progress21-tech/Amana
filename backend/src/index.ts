@@ -51,9 +51,6 @@ function isOriginAllowed(origin: string | undefined): boolean {
   return allowedOriginPatterns.some(re => re.test(origin));
 }
 
-// Handle preflight before helmet so headers aren't stripped
-app.options('*', cors({ origin: isOriginAllowed, credentials: true }));
-
 app.use(
   cors({
     origin: (origin, callback) => {
