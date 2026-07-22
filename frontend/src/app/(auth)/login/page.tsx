@@ -25,10 +25,11 @@ export default function LoginPage() {
     toast.success('Welcome back!');
     router.push('/dashboard');
   } catch (err) {
-    console.error('Login failed:', err);
-    toast.error('Invalid phone or password');
-    setLoading(false);
-  }
+  console.error('Login failed:', err);
+  console.error('Full error detail:', (err as any)?.response?.data || (err as any)?.message);
+  toast.error('Invalid phone or password');
+  setLoading(false);
+}
 };
 
   return (
